@@ -25,9 +25,12 @@ public class HomeController {
 	@RequestMapping(value="/home.htm", method = {RequestMethod.GET, RequestMethod.POST})
 	public String getHomePage(HttpServletRequest request, HttpServletResponse response, Model model,@ModelAttribute("employeeForm") EmployeeForm form){
 		model.addAttribute("message", "Welcome to Home Page!");
-		form = new EmployeeForm();
+		form = (EmployeeForm)form;
 		Employee employee = homeService.getEmployee(form);
-		model.addAttribute("empName", employee.getName());
+		if(employee != null)
+			model.addAttribute("empName", employee.getName());
+		else
+			model.addAttribute("failureMsg", "Sorry Employee Not Found!");
 		model.addAttribute("employeeForm", form);
 		return "home";
 	}
