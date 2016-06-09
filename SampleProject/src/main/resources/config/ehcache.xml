@@ -1,0 +1,22 @@
+<ehcache updatecheck="false">
+
+	<defaultCache
+ 		maxElementsInMemory="10000"
+		eternal="false"
+		timeToIdleSeconds="1000"
+		timeToLiveSeconds="1000"
+		overflowToDisk="true"
+		diskPersistent="false"
+		diskExpiryThreadIntervalSeconds="120" 
+	/>    
+
+    <cache name="appCache"
+              maxElementsInMemory="10000"
+              eternal="true"
+              timeToIdleSeconds="1800"
+              timeToLiveSeconds="604800"
+              overflowToDisk="true">
+    </cache>
+
+    
+</ehcache>

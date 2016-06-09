@@ -9,7 +9,7 @@
     <!-- Uncomment and your base-package here:
          <context:component-scan
             base-package="org.springframework.samples.web"/>  -->
-	<context:component-scan base-package="com.smartapp.controller" />
+	<!-- <context:component-scan base-package="com.smartapp.web.controller" /> -->
 
     <mvc:annotation-driven />
 

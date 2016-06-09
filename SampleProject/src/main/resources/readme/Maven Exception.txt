@@ -1,0 +1,34 @@
+Description Resource Path Location Type Could not calculate build plan: Failure to transfer org.apache.maven.plugins:maven-compiler-plugin:pom:2.0.2 from http://repo1.maven.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced. Original error: Could not transfer artifact org.apache.maven.plugins:maven-compiler-plugin:pom:2.0.2 from/to central (http://repo1.maven.org/maven2): No response received after 60000 ExampleProject Unknown Maven Problem
+
+
+Remove all your failed downloads:
+
+find ~/.m2  -name "*.lastUpdated" -exec grep -q "Could not transfer" {} \; -print -exec rm {} \;
+For windows:
+
+cd %userprofile%\.m2\repository
+for /r %i in (*.lastUpdated) do del %i
+Then rightclick on your project in eclipse and choose Maven->"Update Project ...", make sure "Update Dependencies" is checked in the resulting dialog and click OK.
+
+
+http://docs.sonarqube.org/display/SONAR/Analyzing+with+SonarQube+Scanner+for+Maven
+
+[ERROR] Failed to execute goal org.sonarsource.scanner.maven:sonar-maven-plugin:3.0.1:sonar (default-cli) on project VTNextGen-root: Error when executing blame for file src/main/java/com/deere/vt/nextgen/config/PersistenceJpaConfig.java: svn: E175002: Connection has been shutdown: javax.net.ssl.SSLProtocolException: handshake alert:  unrecognized_name
+[ERROR] svn: E175002: OPTIONS request failed on '/svn/viewingtool/trunk/tomcat/VTNextGen/src/main/java/com/deere/vt/nextgen/config/PersistenceJpaConfi
+g.java'
+
+
+C:\Program Files\Java\jdk1.7.0_21\bin>keytool -importcert -file "c:\Users\MG02928\Desktop\VT\SVN_Certificate.cer" -keystore "c:\Program Files\Java\jdk1.7.0_21\jre\lib\security\cacerts" -alias svn_jd_cert -storepass changeit
+
+mvn clean verify sonar:sonar
+ 
+# In some situation you may want to run sonar:sonar goal as a dedicated step. Be sure to use install as first step for multi-module projects
+mvn clean install
+mvn sonar:sonar
+ 
+# Specify the version of sonar-maven-plugin instead of using the latest. See also 'How to Fix Version of Maven Plugin' below.
+mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.0.1:sonar
+
+
+mvn clean verify sonar:sonar -Djsse.enableSNIExtension=false
+
