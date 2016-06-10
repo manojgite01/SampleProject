@@ -1,0 +1,114 @@
+#cluetip-close IMG {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+#cluetip-title {
+	OVERFLOW: hidden
+}
+#cluetip-title #cluetip-close {
+	FLOAT: right; POSITION: relative
+}
+#cluetip-waitimage {
+	BACKGROUND-IMAGE: url(wait.gif); WIDTH: 43px; POSITION: absolute; HEIGHT: 11px
+}
+.cluetip-arrows {
+	BACKGROUND-POSITION: 0px 0px; DISPLAY: none; LEFT: -11px; WIDTH: 11px; BACKGROUND-REPEAT: no-repeat; POSITION: absolute; TOP: 0px; HEIGHT: 22px
+}
+#cluetip-extra {
+	DISPLAY: none
+}
+.cluetip-default {
+	BACKGROUND-COLOR: #e3dbb9
+}
+.cluetip-default #cluetip-outer {
+	BORDER-RIGHT: #000 1px solid; BORDER-TOP: #000 1px solid; MARGIN: 0px; BORDER-LEFT: #000 1px solid; BORDER-BOTTOM: #000 1px solid; POSITION: relative; BACKGROUND-COLOR: #e3dbb9
+}
+.cluetip-default H3#cluetip-title {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-WEIGHT: normal; FONT-SIZE: 1.1em; PADDING-BOTTOM: 4px; MARGIN: 0px 0px 5px; COLOR: #fff; PADDING-TOP: 8px; BACKGROUND-COLOR: #87876a
+}
+.cluetip-default #cluetip-title A {
+	FONT-SIZE: 0.95em; COLOR: #d9d9c2
+}
+.cluetip-default #cluetip-inner {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 12px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px; FONT-FAMILY: arial
+}
+.cluetip-default DIV#cluetip-close {
+	MARGIN: 0px 5px 5px; COLOR: #900; TEXT-ALIGN: right
+}
+.clue-right-default .cluetip-arrows {
+	BACKGROUND-IMAGE: url(/ViewingTool/TDP/img/darrowleft.gif)
+}
+.clue-left-default .cluetip-arrows {
+	LEFT: 100%; BACKGROUND-IMAGE: url(/ViewingTool/TDP/img/darrowright.gif); MARGIN-RIGHT: -11px
+}
+.clue-top-default .cluetip-arrows {
+	LEFT: 50%; BACKGROUND-IMAGE: url(/ViewingTool/TDP/img/darrowdown.gif); MARGIN-LEFT: -11px; WIDTH: 22px; TOP: 100%; HEIGHT: 11px
+}
+.clue-bottom-default .cluetip-arrows {
+	LEFT: 50%; BACKGROUND-IMAGE: url(/ViewingTool/TDP/img/darrowup.gif); MARGIN-LEFT: -11px; WIDTH: 22px; TOP: -11px; HEIGHT: 11px
+}
+.cluetip-jtip {
+	BACKGROUND-COLOR: transparent
+}
+.cluetip-jtip #cluetip-outer {
+	BORDER-RIGHT: #ccc 2px solid; BORDER-TOP: #ccc 2px solid; BORDER-LEFT: #ccc 2px solid; BORDER-BOTTOM: #ccc 2px solid; POSITION: relative; BACKGROUND-COLOR: #fff
+}
+.cluetip-jtip H3#cluetip-title {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-WEIGHT: normal; FONT-SIZE: 16px; PADDING-BOTTOM: 2px; MARGIN: 0px 0px 5px; COLOR: #333; PADDING-TOP: 2px; BACKGROUND-COLOR: #ccc
+}
+.cluetip-jtip #cluetip-inner {
+	PADDING-RIGHT: 5px; DISPLAY: inline-block; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 0px
+}
+.cluetip-jtip DIV#cluetip-close {
+	MARGIN: 0px 5px 5px; COLOR: #900; TEXT-ALIGN: right
+}
+.clue-right-jtip .cluetip-arrows {
+	BACKGROUND-IMAGE: url(images/arrowleft.gif)
+}
+.clue-left-jtip .cluetip-arrows {
+	LEFT: 100%; BACKGROUND-IMAGE: url(images/arrowright.gif); MARGIN-RIGHT: -11px
+}
+.clue-top-jtip .cluetip-arrows {
+	LEFT: 50%; BACKGROUND-IMAGE: url(images/arrowdown.gif); MARGIN-LEFT: -11px; WIDTH: 22px; TOP: 100%; HEIGHT: 11px
+}
+.clue-bottom-jtip .cluetip-arrows {
+	LEFT: 50%; BACKGROUND-IMAGE: url(images/arrowup.gif); MARGIN-LEFT: -11px; WIDTH: 22px; TOP: -11px; HEIGHT: 11px
+}
+.cluetip-rounded {
+	MARGIN-TOP: 10px; BACKGROUND: url(images/bl.gif) no-repeat 0px 100%; MARGIN-LEFT: 12px
+}
+.cluetip-rounded #cluetip-outer {
+	MARGIN-TOP: -12px; BACKGROUND: url(images/tl.gif) no-repeat 0px 0px
+}
+.cluetip-rounded #cluetip-title {
+	PADDING-RIGHT: 12px; PADDING-LEFT: 12px; PADDING-BOTTOM: 0px; MARGIN: 0px -12px 0px 0px; PADDING-TOP: 12px; POSITION: relative; BACKGROUND-COLOR: transparent
+}
+.cluetip-rounded #cluetip-extra {
+	DISPLAY: block; RIGHT: 0px; BACKGROUND: url(images/tr.gif) no-repeat 100% 0px; MARGIN: -12px -12px 0px 0px; WIDTH: 12px; POSITION: absolute; TOP: 0px; HEIGHT: 30px
+}
+.cluetip-rounded #cluetip-inner {
+	PADDING-RIGHT: 12px; PADDING-LEFT: 12px; BACKGROUND: url(images/br.gif) no-repeat 100% 100%; PADDING-BOTTOM: 12px; MARGIN: -18px -12px 0px 0px; PADDING-TOP: 5px; POSITION: relative
+}
+.cluetip-rounded DIV#cluetip-close {
+	BACKGROUND: none transparent scroll repeat 0% 0%; MARGIN: 0px 5px 5px; COLOR: #009; TEXT-ALIGN: right
+}
+.cluetip-rounded DIV#cluetip-close A {
+	COLOR: #777
+}
+.clue-right-rounded .cluetip-arrows {
+	BACKGROUND-IMAGE: url(images/rarrowleft.gif)
+}
+.clue-left-rounded .cluetip-arrows {
+	LEFT: 100%; BACKGROUND-IMAGE: url(images/rarrowright.gif); MARGIN-LEFT: 12px
+}
+.clue-top-rounded .cluetip-arrows {
+	LEFT: 50%; BACKGROUND-IMAGE: url(images/rarrowdown.gif); MARGIN-LEFT: -11px; WIDTH: 22px; TOP: 100%; HEIGHT: 11px
+}
+.clue-bottom-rounded .cluetip-arrows {
+	LEFT: 50%; BACKGROUND-IMAGE: url(images/rarrowup.gif); MARGIN-LEFT: -11px; WIDTH: 22px; TOP: -23px; HEIGHT: 11px
+}
+.cluetip-rounded #cluetip-title {
+	ZOOM: 1
+}
+.cluetip-rounded #cluetip-inner {
+	ZOOM: 1
+}

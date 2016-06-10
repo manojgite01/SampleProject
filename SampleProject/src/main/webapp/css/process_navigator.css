@@ -1,0 +1,60 @@
+TABLE#process_navigator {
+	BACKGROUND-COLOR: #fff;margin-left:100px;
+	
+}
+TABLE#process_navigator TR TH.indicator {
+	BACKGROUND-POSITION: center top; BACKGROUND-IMAGE: url(../images/milestone_delimiter.gif); VERTICAL-ALIGN: top; WIDTH: 33px; BACKGROUND-REPEAT: repeat-y; TEXT-ALIGN: center
+}
+TABLE#process_navigator TR TH.indicator DIV {
+	BACKGROUND-POSITION: center top; BACKGROUND-IMAGE: url(../images/milestone_marker.gif); MARGIN: 3px; VERTICAL-ALIGN: bottom; WIDTH: 27px; PADDING-TOP: 20px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 21px; BACKGROUND-COLOR: #fff
+}
+TABLE#process_navigator TR.dimension_delimiter {
+	height:7px;
+	vertical-align:center;
+	background-image:url("../images/dimension_delimiter.gif");
+	background-repeat:repeat-x;
+	background-position:top left;
+	margin-bottom:5px;
+}
+TABLE#process_navigator TR TD#processContainer {
+	
+}
+TABLE#process_navigator TR TH.active DIV {
+	BACKGROUND-COLOR: #e3dbb9
+}
+TABLE#process_navigator TR TH.output {
+	BORDER-RIGHT: #000 1px solid; FONT-SIZE: 16px; BORDER-LEFT: #000 1px solid; WIDTH: 130px; BACKGROUND-COLOR: #e3dbb9; TEXT-ALIGN: center
+}
+TABLE#process_navigator TR TH.tool {
+	BORDER-RIGHT: #000 1px solid; FONT-SIZE: 16px; BORDER-LEFT: #000 1px solid; WIDTH: 130px; BACKGROUND-COLOR: #e3dbb9; TEXT-ALIGN: center
+}
+TABLE#process_navigator TR TD.activity {
+	VERTICAL-ALIGN: top; WIDTH: 140px
+}
+TABLE#process_navigator TR TD.activity DIV {
+	BORDER-RIGHT: black 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: black 1px solid; PADDING-LEFT: 10px; FONT-SIZE: 10px; PADDING-BOTTOM: 10px; MARGIN: 10px; BORDER-LEFT: black 1px solid; WIDTH: 130px; COLOR: #000; PADDING-TOP: 10px; BORDER-BOTTOM: black 1px solid; FONT-FAMILY: verdana; BACKGROUND-COLOR: #f0ecd9; TEXT-ALIGN: center
+}
+TABLE#process_navigator TR TD.output {
+	BORDER-RIGHT: #000 1px solid; FONT-SIZE: 16px; BORDER-LEFT: #000 1px solid; WIDTH: 130px; BACKGROUND-COLOR: #e3dbb9; TEXT-ALIGN: center
+}
+TABLE#process_navigator TR TD.tool {
+	BORDER-RIGHT: #000 1px solid; FONT-SIZE: 16px; BORDER-LEFT: #000 1px solid; WIDTH: 130px; BACKGROUND-COLOR: #e3dbb9; TEXT-ALIGN: center
+}
+TABLE#process_navigator TR TD.output DIV {
+	BORDER-RIGHT: black 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: black 1px solid; PADDING-LEFT: 10px; FONT-SIZE: 10px; PADDING-BOTTOM: 10px; MARGIN: 10px; BORDER-LEFT: black 1px solid; WIDTH: 130px; COLOR: #000; PADDING-TOP: 10px; BORDER-BOTTOM: black 1px solid; FONT-FAMILY: verdana; BACKGROUND-COLOR: #fff; TEXT-ALIGN: center
+}
+TABLE#process_navigator TR TD.tool DIV {
+	BORDER-RIGHT: black 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: black 1px solid; PADDING-LEFT: 10px; FONT-SIZE: 10px; PADDING-BOTTOM: 10px; MARGIN: 10px; BORDER-LEFT: black 1px solid; WIDTH: 130px; COLOR: #000; PADDING-TOP: 10px; BORDER-BOTTOM: black 1px solid; FONT-FAMILY: verdana; BACKGROUND-COLOR: #fff; TEXT-ALIGN: center
+}
+TABLE#process_navigator TR TD.activity DIV.active {
+	BORDER-TOP-WIDTH: 3px; PADDING-RIGHT: 8px; PADDING-LEFT: 8px; BORDER-LEFT-WIDTH: 3px; BORDER-LEFT-COLOR: #dd8231; BORDER-BOTTOM-WIDTH: 3px; BORDER-BOTTOM-COLOR: #dd8231; PADDING-BOTTOM: 8px; BORDER-TOP-COLOR: #dd8231; PADDING-TOP: 8px; BACKGROUND-COLOR: #e3dbb9; BORDER-RIGHT-WIDTH: 3px; BORDER-RIGHT-COLOR: #dd8231
+}
+TABLE#process_navigator TR TD.output DIV.active {
+	BORDER-TOP-WIDTH: 3px; PADDING-RIGHT: 8px; PADDING-LEFT: 8px; BORDER-LEFT-WIDTH: 3px; BORDER-LEFT-COLOR: #dd8231; BORDER-BOTTOM-WIDTH: 3px; BORDER-BOTTOM-COLOR: #dd8231; PADDING-BOTTOM: 8px; BORDER-TOP-COLOR: #dd8231; PADDING-TOP: 8px; BACKGROUND-COLOR: #f0ecd9; BORDER-RIGHT-WIDTH: 3px; BORDER-RIGHT-COLOR: #dd8231
+}
+TABLE#process_navigator TR TD.tool DIV.active {
+	BORDER-TOP-WIDTH: 3px; PADDING-RIGHT: 8px; PADDING-LEFT: 8px; BORDER-LEFT-WIDTH: 3px; BORDER-LEFT-COLOR: #dd8231; BORDER-BOTTOM-WIDTH: 3px; BORDER-BOTTOM-COLOR: #dd8231; PADDING-BOTTOM: 8px; BORDER-TOP-COLOR: #dd8231; PADDING-TOP: 8px; BACKGROUND-COLOR: #f0ecd9; BORDER-RIGHT-WIDTH: 3px; BORDER-RIGHT-COLOR: #dd8231
+}
+TABLE#process_navigator TR TD#activity_description_div {
+	BORDER-RIGHT: #000 1px solid; PADDING-RIGHT: 4px; PADDING-LEFT: 4px; FONT-SIZE: 12px; PADDING-BOTTOM: 4px; MARGIN: 4px; VERTICAL-ALIGN: top; PADDING-TOP: 4px; BORDER-BOTTOM: #000 1px solid; HEIGHT: 100px; BACKGROUND-COLOR: #e3dbb9
+}

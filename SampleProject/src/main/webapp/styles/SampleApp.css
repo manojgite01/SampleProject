@@ -1,0 +1,20 @@
+@CHARSET "ISO-8859-1";
+
+td .center {
+	text-align: center
+}
+
+td .left {
+	text-align: left
+}
+
+td .right {
+	text-align: right
+}
+
+.error{ 
+font:18px sans-serif bold; 
+color:#FF0000; 
+background:#ffc; 
+} 
+

@@ -3,6 +3,7 @@ package com.smartapp.web.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -27,8 +28,10 @@ public class HomeController {
 		model.addAttribute("message", "Welcome to Home Page!");
 		form = (EmployeeForm)form;
 		Employee employee = homeService.getEmployee(form);
-		if(employee != null)
+		if(employee != null){
+			BeanUtils.copyProperties(employee, form);
 			model.addAttribute("empName", employee.getName());
+		}
 		else
 			model.addAttribute("failureMsg", "Sorry Employee Not Found!");
 		model.addAttribute("employeeForm", form);

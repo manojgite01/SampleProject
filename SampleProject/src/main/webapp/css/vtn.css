@@ -1,0 +1,100 @@
+@CHARSET "ISO-8859-1";   
+ 
+.font-style
+{ 
+	font-style:normal;
+	font-family:Calibri;
+	color:black;
+	font-size:10pt;
+	font-weight:normal;
+}
+.font-style-II
+{
+	text-transform:none;
+	font-style:normal;
+	font-family:Calibri;
+	color:black;
+	font-size:11pt;
+	font-weight:normal;
+} 
+.dropDown
+{
+	font-family:Calibri;
+	font-size:10pt;
+	DIRECTION: ltr;
+	width:240px;
+}
+
+
+.vtn_title,.vtn_titleMedium 
+{
+	margin-top:0px;
+	margin-bottom:0px;
+	color:#262626;
+	font-size:11pt;
+	font-weight:normal;
+	padding-left: 5px;
+} 
+
+.boxTable
+{
+	background-color: white;
+	border-collapse: collapse;
+	font-weight:normal;
+	font-size:16px;
+ 	font-family:Calibri; 
+}  
+
+.boxHeader
+{
+	text-align: center;
+	font-family:"JDSansMd";
+	font-weight:normal;
+	font-size:18px;
+	background-color:#454545;
+	color:white;
+	border-collapse:collapse;
+}
+
+.tableFrame,.boxTableFrame
+{
+	box-shadow:5px 5px 3px #888888;
+} 
+ .button,.buttonDisable {
+        border:1px solid #CCCCCC;
+        border-radius: 4px;
+        font-size: 14px;
+       	font-family: "JDSansMd"; 
+        font-weight: normal;
+        font-style: normal;
+        height: 26px;
+        vertical-align: middle;
+        padding: 0 18px;
+        text-shadow: none;
+        cursor:pointer;
+        color:white;
+        background-color:#454545; 
+        /* Fix for IE 8- */
+        width:auto;
+        overflow:visible;
+        background: #black; /* Old browsers */ 
+    }
+    
+    ul.error, .error{
+        background-color:#FFEEEE;
+        border-color: #EBB5B5;
+    }
+    ul.alert{
+        list-style-type:none;
+        font-family:Calibri, "Helvetica Neue", Helvetica, Arial, Sans-serif;
+        color:#454545;
+        padding-left:0;
+        margin-left:0;
+        border-color:#FFFFFF;
+        border-width:1px;
+        border-style:solid;
+        width: 65%;
+        text-align: center;
+        margin-bottom:0px;
+		margin-top: 0px;
+    }

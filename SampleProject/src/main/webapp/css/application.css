@@ -1,0 +1,520 @@
+@CHARSET "ISO-8859-1";
+
+
+table.dataTable td {	 
+	border: .5px solid #AAAAAA;
+	color: black;   
+	font-weight: normal; 
+	font-style:normal;
+	font-family:"JDSansMd";
+	font-size:10pt; 
+} 
+
+table.dataTable td .select,.textBoxDT{ 
+	font-family:Calibri;
+	font-size:10pt;
+	DIRECTION: ltr;	
+	}
+table.dataTable td .textBoxDT{ 
+		 
+	} 
+table.dataTable td.center,
+table.dataTable td.dataTables_empty {
+	text-align: center;
+}
+
+table.dataTable tr.odd { background-color: white; }
+table.dataTable tr.even { background-color: #eee;}
+
+table.dataTable tr.odd td.sorting_1 { background-color: #D3D6FF; }
+table.dataTable tr.odd td.sorting_2 { background-color: #DADCFF; }
+table.dataTable tr.odd td.sorting_3 { background-color: #E0E2FF; }
+table.dataTable tr.even td.sorting_1 { background-color: #EAEBFF; }
+table.dataTable tr.even td.sorting_2 { background-color: #F2F3FF; }
+table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }
+
+.btn {   
+		color:#050;
+		font: bold 14px 'trebuchet ms',helvetica,sans-serif;   
+		border: 1px solid;
+		border-color: #696 #696 #696 #696;
+		filter:progid:DXImageTransform.Microsoft.Gradient (GradientType=0,StartColorStr='#ffffffff',EndColorStr='#ffeeddaa');  
+	}
+.btnhov {
+	border-color: #c63 #c63 #c63 #c63;
+}
+
+.alert-danger {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+}
+.alert-danger hr {
+  border-top-color: #e4b9c0;
+}
+.alert-danger .alert-link {
+  color: #843534;
+}
+
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+}
+.alert-success hr {
+  border-top-color: #c9e2b3;
+}
+.alert-success .alert-link {
+  color: #2b542c;
+}
+
+/*** BEGIN deere.ux.web.buttons.core.css code ***/
+    /*** These are the main button styles ***/
+    
+    .button,.buttonDisable {
+        border:1px solid #CCCCCC;
+        border-radius: 4px;
+        font-size: 14px;
+       	font-family: "JDSansMd"; 
+        font-weight: normal;
+        font-style: normal;
+        height: 26px;
+        vertical-align: middle;
+        padding: 0 18px;
+        text-shadow: none;
+        cursor:pointer;
+        color:white;
+        background-color:#454545; 
+        /* Fix for IE 8- */
+        width:auto;
+        overflow:visible;
+        background: #black; /* Old browsers */ 
+    } 
+    .button:hover{ 
+        background-color:#367C2B;
+    }
+    .buttonDisable{
+    	 background-color:#888888; 
+    }
+    
+    .button.disabled,
+    .button.disabled:hover,
+    .button.disabled:active{
+	        cursor: default !important;
+	        color:#CCCCCC !important;
+	        background-color:#f7f7f7 !important;
+	        background-image:none !important;
+	        box-shadow:none !important;
+	        border:1px solid #CCCCCC !important;
+	        filter: none !important;
+	        font-weight: normal !important;
+    }
+    
+ /*** END deere.ux.web.buttons.core.css code ***/ 
+.partial-search-entry
+{
+	   	background:#F1F1F1;
+	   	width:350px;
+	   	padding: 10px;
+	   	border: 5px solid #AAAAAA;
+	   	box-shadow: 4px 4px 5px #888;
+	   	position:absolute;
+	   	top: 25%;
+	   	left: 35%;
+	   	display: none;
+	   	border-radius: 5px;
+}
+	
+.partial-search-entry input[type='text']
+{
+	    border: 1px solid #BBBBBB;
+	    box-shadow: 2px 2px 4px #C5D7E2 inset;
+	    height: 25px;
+	    width: 200px;
+}
+
+.partial-search-entry input[type='text']:focus
+{
+    	border: 1px solid #C5D7E2;
+}
+
+.partial-search-entry td
+{
+		font-size: 10pt;
+		font-style: italic;
+		font-weight: bold;;
+		font-family:Calibri;  
+}
+/* css for User  Search By name [end] */
+
+/* css for  Hover tool tip on view / Edit and create screen [Start] */
+
+a.tooltip span
+{
+		display:none;
+		padding:2px 3px;
+		margin-left:8px;
+		width:150px; 
+		text-align:left
+}
+a.tooltip:hover span
+{
+		display:block;
+		position:absolute;
+		border:1px solid #cccccc;
+		background:#ffffff; 
+		color:#6c6c6c; 
+		align:left; 
+}
+a.tooltip:visited {
+		color: #68403c;
+}
+a.tooltip b
+{
+		color: #ffffff;
+} 
+.relative{
+		position:relative;
+}
+.absolute {
+		position:absolute;
+		top:60px;
+		right:0px;
+		width:300px;
+		height: auto;
+}
+
+/*css for  Hover tool tip on view / Edit and create screen [Start]*/
+/*css for stimulate User (Change User) Admin Page[Start]*/ 
+
+ .LoggedInAsDiv{
+	    background: #F1F1F1;
+	    width:315px;
+	    padding: 10px;
+	    border: 5px solid #AAAAAA;
+	    box-shadow: 3px 3px 5px #888;
+	    position: absolute;
+		top: 20%;
+	    left: 40%;
+	    display: none;
+	    border-radius: 5px;
+}
+
+.AdminDiv{
+	    background: #F1F1F1;
+	    width:200px;
+	    padding: 10px;
+	    border: 5px solid #AAAAAA;
+	    box-shadow: 3px 3px 5px #888;
+	    position: absolute; 
+	    display: none;
+	    border-radius: 5px;
+	    top: 20%;
+	    left: 40%;
+}
+
+.LoggedInAsDiv input[type='text']{
+	    border: 1px solid #BBBBBB;
+	    box-shadow: 2px 2px 4px #C5D7E2 inset;
+	    height: 25px;
+	    width: 200px;
+}
+.LoggedInAsDiv input[type='text']:focus{
+    border: 1px solid #C5D7E2;
+}
+.LoggedInAsDiv.AdminDiv td{
+		font-size: 10pt;
+		font-style: italic;
+		font-weight: bold;;
+		font-family:Calibri; 
+} 
+/* css for stimulate User (Change User) Admin Page[end]   */ 
+
+/* css Add user and provide access to  user form css  (Admin Page)[Start] */
+
+.entry-form{
+	    background: #F1F1F1;
+	    width:400px;
+	    padding: 10px;
+	    border: 5px solid #AAAAAA;
+	    box-shadow: 3px 3px 5px #888;
+	    position: absolute;
+	    top: 25%;
+	    left: 35%;
+	    display: none;
+	    border-radius: 5px;
+	   	font-size: 10pt;
+		font-style: italic;
+		font-weight: bold;
+		font-family:Calibri;
+}
+
+.entry-form input[type='text']{
+	    border: 1px solid #BBBBBB;
+	    box-shadow: 2px 2px 4px #C5D7E2 inset;
+	    height: 25px;
+	    width: 200px;
+}
+
+.entry-form input[type='text']:focus{
+   		 border: 1px solid #C5D7E2;
+}	
+
+.validationMsg,.serverMsg,.validationMsgSmall{
+		margin-bottom:3px;
+		margin-top:3px;
+}
+.validationMsg,.validationMsgSmall{
+		display:none; 
+}
+
+.validationMsgSmall ul.alert{
+	width: 80%;
+}
+
+.successMsg{
+	margin-bottom:3px;
+	margin-top:3px;
+	font-family:Calibri, "Helvetica Neue", Helvetica, Arial, Sans-serif !important;
+	color: green;
+}
+
+.failureMsg{
+	margin-bottom:3px;
+	margin-top:3px;
+	font-family:Calibri, "Helvetica Neue", Helvetica, Arial, Sans-serif;
+	color: red;
+}
+/* css Add user and provide access to  user form css  (Admin Page)[Start]   */ 
+
+
+  /*** These are alert styles ***/
+    
+    dl.alert,
+    ul.alert{
+        list-style-type:none;
+        font-family:Calibri, "Helvetica Neue", Helvetica, Arial, Sans-serif;
+        color:#454545;
+        padding-left:0;
+        margin-left:0;
+        border-color:#FFFFFF;
+        border-width:1px;
+        border-style:solid;
+        width: 65%;
+        text-align: center;
+        margin-bottom:0px;
+		margin-top: 0px;
+    }
+    
+    dl.success,
+    ul.success{
+        background-color: #EBF2EB;
+        border-color: #B9CEB5;
+    }
+    
+    dl.error,
+    ul.error, .error{
+        background-color:#FFEEEE;
+        border-color: #EBB5B5;
+    }
+    
+    dl.caution,
+    ul.caution{
+        background-color:#FFFFCC;
+        border-color: #F9E677;
+    }
+    
+    dl.info,
+    ul.info{
+        background-color:#FAFAFA;
+        border-color: #C1D9E8;
+    }
+    
+    dl.alert,
+    ul.alert li:first-child{
+        background-repeat: no-repeat;
+    }
+    
+    dl.alert.success,
+    ul.alert.success li:first-child{
+        background-image: url("../img/alert.success.active.png");
+        vertical-align: middle;
+    }
+    
+    dl.alert.error,
+    ul.alert.error li:first-child{
+        background-image: url("../img/alert.critical.big.active.png");
+        vertical-align: middle;
+    }
+    
+    dl.alert.caution,
+    ul.alert.caution li:first-child{
+        background-image: url("../img/alert.warning.big.active.png");
+        vertical-align: middle;
+    }
+    
+    dl.alert.info,
+    ul.alert.info li:first-child{
+        background-image: url("../img/alert.informational.active.png");
+		vertical-align: middle;
+    }
+    
+    dl.alert dd,
+    dl.alert dt,
+    ul.alert li{
+        padding-left:10px;
+    }
+    
+    /*** END deere.ux.web.alerts.core.css code ***/
+    
+    /*** BEGIN deere.ux.web.alerts.withoutDescription.css code ***/
+    /*** These are alert styles specific to alerts with no description ***/
+    
+    ul.alert{
+        font-weight:bold;
+        font-size:10pt;	
+     
+    }
+    
+    ul.alert li{
+        padding-top:10px;
+        padding-bottom:10px;
+    }
+    
+    ul.alert.success li:first-child {
+        background-position:20px 10px;
+    }
+    
+    ul.alert.error li:first-child {
+        background-position:20px 9px;
+    }
+    
+    ul.alert.caution li:first-child {
+        background-position:20px 9px;
+    }
+    
+    ul.alert.info li:first-child {
+        background-position:20px 9px;
+    }
+    /*** END deere.ux.web.alerts.withoutDescription.css code ***/
+    
+    /*** BEGIN deere.ux.web.alerts.withDescription.css code ***/
+    /*** These are alert styles for alerts with descriptions ***/
+    
+    dl.alert{
+        padding:10px 0 0 0;
+        background-position:20px 25px;
+    }
+    
+    dl.alert dt{
+        font-size:20px;
+        padding-top:5px;
+    }
+    
+    dl.alert dd{
+        margin-left:0;
+        padding-bottom:15px;
+    }
+    
+	.partial-search-entry
+	{
+		   	background:#F1F1F1;
+		   	width:350px;
+		   	padding: 10px;
+		   	border: 5px solid #AAAAAA;
+		   	box-shadow: 4px 4px 5px #888;
+		   	position:absolute;
+		   	top: 25%;
+		   	left: 35%;
+		   	display: none;
+		   	border-radius: 5px;
+	}
+		
+	.partial-search-entry input[type='text']
+	{
+		    border: 1px solid #BBBBBB;
+		    box-shadow: 2px 2px 4px #C5D7E2 inset;
+		    height: 25px;
+		    width: 200px;
+	}
+	
+	.partial-search-entry input[type='text']:focus
+	{
+	    	border: 1px solid #C5D7E2;
+	}
+	
+	.partial-search-entry td
+	{
+			font-size: 10pt;
+			font-style: italic;
+			font-weight: bold;;
+			font-family:Calibri;  
+	}
+	/* css for User  Search By name [end] */
+    
+    /*** END deere.ux.web.alerts.withDescription.css code ***/
+    
+// checkbox css for form:checkbox     
+.jd input[type=checkbox] {
+	opacity: 0;
+	height: 20px;
+	width: 20px;
+	position: absolute;
+	cursor: pointer;
+	margin: auto;
+	z-index: 100
+}
+
+.jd input[type=checkbox]+input[type=hidden]+label {
+	margin: 0;
+	clear: none;
+	border: 1px solid #DDD;
+	background: #f7f7f7;
+	background: -moz-linear-gradient(-45deg, #f7f7f7 0, #fff 100%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0, #f7f7f7),
+		color-stop(100%, #fff) );
+	background: -webkit-linear-gradient(-45deg, #f7f7f7 0, #fff 100%);
+	background: -o-linear-gradient(-45deg, #f7f7f7 0, #fff 100%);
+	background: -ms-linear-gradient(-45deg, #f7f7f7 0, #fff 100%);
+	background: linear-gradient(135deg, #f7f7f7 0, #fff 100%);
+	padding: 9px;
+	border-radius: 3px;
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	z-index: 99
+}
+
+.jd input[type=checkbox]+input[type=hidden]+label+div.check-label {
+	display: inline;
+	margin-left: 6px;
+	vertical-align: 6px
+}
+
+.jd input[type=checkbox]+input[type=hidden]+label:hover,.jd input[type=checkbox]+input[type=hidden]:hover+label
+	{
+	border-color: #367c2b
+}
+
+.jd input[type=checkbox]:checked+input[type=hidden]+label {
+	background-image: url(../img/checkbox.active.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	border-color: transparent
+}
+
+.jd input[type=checkbox]:checked+input[type=hidden]+label:after {
+	font-size: 12px;
+	position: absolute;
+	top: 1px;
+	left: 4px;
+	color: #FFF
+}
+
+.jd input[type=checkbox]+label:active,.jd input[type=checkbox]:checked+label:active
+	{
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .05), inset 0 1px 3px
+		rgba(0, 0, 0, .1)
+}
+
+.jd .pageTitle{align:left; padding-left: 60px; position: fixed; font-weight: bold;}
