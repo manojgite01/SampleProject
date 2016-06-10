@@ -8,6 +8,15 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Welcome</title>
+		<LINK rel=stylesheet type=text/css href="components/bootstrap/css/bootstrap.min.css"> 
+		<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+		<link rel="stylesheet" href="css/jquery.dataTables.min.css">
+		<script type="text/javascript" charset="utf8" src="js/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript" charset="utf8" src="js/dataTables-1.10.9.js"></script>
+		<script type="text/javascript" charset="utf8" src="js/jqueryui-1.10.9.js"></script>
+		<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="components/bootstrap/js/bootstrap.min.js"></script>
 	</head> 
 	<body>
 		<c:url value="/home.htm" var="messageUrl" />
