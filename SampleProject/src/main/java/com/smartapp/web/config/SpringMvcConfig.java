@@ -12,8 +12,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -26,7 +28,7 @@ import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
-import com.smartapp.aspect.IAFPerformanceLogForControllerAspect;
+import com.smartapp.aspect.PerformanceLogForControllerAspect;
 import com.smartapp.web.exceptionresolver.SmartAppExceptionResolver;
 import com.smartapp.web.interceptor.HttpSessionInterceptor;
 import com.smartapp.web.utility.EhCacheAdminController;
@@ -45,6 +47,8 @@ import com.smartapp.web.utility.EhCacheAdminController;
 									"com.smartapp.web.interceptor"
 								})
 @EnableAspectJAutoProxy
+@EnableTransactionManagement
+@Import({ SpringWebSecurityConfig.class })
 public class SpringMvcConfig extends WebMvcConfigurerAdapter {
 
 
@@ -123,8 +127,8 @@ public class SpringMvcConfig extends WebMvcConfigurerAdapter {
 	 *
 	 */
 	@Bean
-	public IAFPerformanceLogForControllerAspect iafPerformanceLogForControllerAspect(){
-		IAFPerformanceLogForControllerAspect iafPerformanceLogForControllerAspect = new IAFPerformanceLogForControllerAspect();
+	public PerformanceLogForControllerAspect iafPerformanceLogForControllerAspect(){
+		PerformanceLogForControllerAspect iafPerformanceLogForControllerAspect = new PerformanceLogForControllerAspect();
 		return iafPerformanceLogForControllerAspect;
 	}
 
@@ -141,7 +145,7 @@ public class SpringMvcConfig extends WebMvcConfigurerAdapter {
 	 * For mapping directly to view name. No need to explicitly write controller and do request mapping.
 	 */
 	public void addViewControllers(ViewControllerRegistry registry){
-		registry.addViewController("/").setViewName("SampleTest");
+		registry.addViewController("/").setViewName("index");
 
 	}
 

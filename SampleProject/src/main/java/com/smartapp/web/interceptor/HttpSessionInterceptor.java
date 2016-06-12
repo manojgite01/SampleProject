@@ -14,10 +14,6 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 @Component(value = "httpSessionInterceptor")
 public class HttpSessionInterceptor extends HandlerInterceptorAdapter {
 
-	/*@Autowired
-	@Qualifier(value = "userHelper")
-	private VTUserHelper userHelper;*/
-
 	/** logger object used to log the messages for this class */
 	private final static Logger logger = LoggerFactory.getLogger(HttpSessionInterceptor.class);
 
@@ -32,9 +28,9 @@ public class HttpSessionInterceptor extends HandlerInterceptorAdapter {
 		// check if data is present in session
 		/*HttpSession session = request.getSession();
 		String userId = ServletUtility.getUserID(request);
-		String iafConfigSuffix = System.getProperty("IafConfigSuffix").toUpperCase();
+		String env = System.getProperty("env").toUpperCase();
 
-		if (iafConfigSuffix.equalsIgnoreCase("Local")||iafConfigSuffix.equalsIgnoreCase("Devl"))
+		if (env.equalsIgnoreCase("Local")||env.equalsIgnoreCase("Devl"))
 			userId = "da77241";
 
 		// setting userid in MDC so that it available in all layers and can be used for
@@ -47,7 +43,7 @@ public class HttpSessionInterceptor extends HandlerInterceptorAdapter {
 		if (session.getAttribute("user") == null) {
 			userId = ServletUtility.getUserID(request);
 
-			if (iafConfigSuffix.equalsIgnoreCase("Local") && userId == null)
+			if (env.equalsIgnoreCase("Local") && userId == null)
 				userId = "da77241";
 
 			request.setAttribute("FirstRequest", "true");

@@ -29,6 +29,7 @@
 		<jackson-annotations.version>2.7.3</jackson-annotations.version>
 		<jackson-databind.version>2.7.3</jackson-databind.version>
 		<spring-security-config.version>4.0.3.RELEASE</spring-security-config.version>
+		<spring.security.version>4.0.3.RELEASE</spring.security.version>
 		<spring-security-taglibs.version>4.0.3.RELEASE</spring-security-taglibs.version>
 		<jaxws-rt.version>2.2.10</jaxws-rt.version>
 
@@ -337,7 +338,13 @@
 		    <artifactId>spring-aop</artifactId>
 		    <version>4.2.5.RELEASE</version>
 		</dependency>
-				
-					
+		
+		<!-- Spring Security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+
 	</dependencies>	
 </project>

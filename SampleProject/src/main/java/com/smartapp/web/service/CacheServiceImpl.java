@@ -7,25 +7,25 @@ import java.util.Map;
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 
-import net.sf.ehcache.Ehcache;
-import net.sf.ehcache.Element;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 import org.springframework.stereotype.Service;
 
-import com.smartapp.web.dao.jpa.VTCacheDao;
+import com.smartapp.web.dao.jpa.CacheDao;
 import com.smartapp.web.domain.Employee;
+
+import net.sf.ehcache.Ehcache;
+import net.sf.ehcache.Element;
 
 @Service(value="cacheService")
 @SuppressWarnings({"unchecked", "deprecation"})
-public class CacheServiceImpl implements VTCacheService{
+public class CacheServiceImpl implements CacheService{
 	
 	@Autowired
 	@Resource(name="cacheDao")
-	private VTCacheDao cacheDao;
+	private CacheDao cacheDao;
 	 
 	@Autowired
 	@Qualifier(value = "cacheManager")
@@ -67,7 +67,6 @@ public class CacheServiceImpl implements VTCacheService{
 
 	public List<Employee> getEmployeeList() {
 		List<Employee> list = (List<Employee>) getCacheElement("employees").getValue(); 
-		//Collections.sort(list, Employee.ProcessNameComparator);
 		return list;
 	}
 	

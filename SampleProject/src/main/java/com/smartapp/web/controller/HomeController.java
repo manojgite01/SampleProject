@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.smartapp.web.domain.Employee;
 import com.smartapp.web.domain.form.EmployeeForm;
+import com.smartapp.web.domain.form.UserDetailsForm;
 import com.smartapp.web.service.HomeService;
 
 @Controller
@@ -23,19 +24,29 @@ public class HomeController {
 	@Qualifier("homeService")
 	HomeService homeService; 
 
-	@RequestMapping(value="/home.htm", method = {RequestMethod.GET, RequestMethod.POST})
-	public String getHomePage(HttpServletRequest request, HttpServletResponse response, Model model,@ModelAttribute("employeeForm") EmployeeForm form){
+	@RequestMapping(value={"/search.htm"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String getSearchPage(HttpServletRequest request, HttpServletResponse response, Model model,@ModelAttribute("employeeForm") EmployeeForm form){
 		model.addAttribute("message", "Welcome to Home Page!");
 		form = (EmployeeForm)form;
-		Employee employee = homeService.getEmployee(form);
-		if(employee != null){
-			BeanUtils.copyProperties(employee, form);
-			model.addAttribute("empName", employee.getName());
+		if(form.getId() != null){
+			Employee employee = homeService.getEmployee(form);
+			if(employee != null){
+				BeanUtils.copyProperties(employee, form);
+				model.addAttribute("empName", employee.getName());
+			}
+			else
+				model.addAttribute("failureMsg", "Employee Not Found!");
 		}
-		else
-			model.addAttribute("failureMsg", "Sorry Employee Not Found!");
 		model.addAttribute("employeeForm", form);
-		return "home";
+		return "search";
+	}
+	
+	@RequestMapping(value={"/signup.htm"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String getSignupPage(HttpServletRequest request, HttpServletResponse response, Model model,@ModelAttribute("employeeForm") UserDetailsForm form){
+		model.addAttribute("message", "Welcome to SignUp Page!");
+		form = (UserDetailsForm)form;
+		model.addAttribute("userDetailsForm", form);
+		return "signup";
 	}
 	
 }

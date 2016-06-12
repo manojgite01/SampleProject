@@ -13,7 +13,7 @@ import com.smartapp.web.domain.Employee;
 
 @Repository("cacheDao")
 @SuppressWarnings("unchecked")
-public class CacheDaoImpl implements VTCacheDao{
+public class CacheDaoImpl implements CacheDao{
 
 	@PersistenceContext(unitName="emf")
 	private EntityManager entityManager;

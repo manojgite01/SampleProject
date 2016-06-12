@@ -31,18 +31,10 @@ public class PersistenceJpaConfig {
 	 */
 	private static final String PERSISTENCE_UNIT_NAME ="jpa";
 	private static final String MYSQL_DIALECT = "org.hibernate.dialect.MySQL5Dialect";
- 	private static final String ENV_LOCAL = "Local";
 
 	/**
 	 * Required for second level caching
 	 */
-	/*
-	private static final String CONFIGURATION_RESOURCE_NAME = "net.sf.ehcache.configurationResourceName";
-	private static final String CACHE_MANAGER_NAME ="net.sf.ehcache.cacheManagerName";
-	private static final String EHCACHE_REGION_FACTORY = "org.hibernate.cache.ehcache.EhCacheRegionFactory"	;
-	private static final String JPA_EHCACHE_FILE_NAME  = "/config/jpa-ehcache.xml";
-	private static final String JPA_CACHE_MANAGER_NAME = "jpaCacheManager";
-	*/
 
 	@Autowired
 	private Environment env;
@@ -66,26 +58,13 @@ public class PersistenceJpaConfig {
 		String driverClassName = env.getProperty("driverClassName");
 		String databaseURL = env.getProperty("databaseURL");
 		String databaseUserId = env.getProperty("databaseUserId");
-		// check if environment is Local
-		String iafConfigSuffix= env.getProperty("IafConfigSuffix");
-		//if(ENV_LOCAL.equalsIgnoreCase(iafConfigSuffix)){
 
-			String encryptionPassword = env.getProperty("databasePassword");
-	  		if(encryptionPassword != null){
-				vtDataSource.setPassword(encryptionPassword);
-	  		} else {
-	  			throw new RuntimeException("In PersistenceJpaConfig for dsfjDataSource encryptionPassword or  encryptionPassword is null");
-	  		}
-		/*}else {
-			// for other environment password will be set from deployIt in CommonPlaceHolder.properties
-			String password = env.getProperty("databasePassword");
-			if(password != null && (!password.contains(DOUBLE_CURLY_BRACES))){
-				vtDataSource.setPassword(password);
-			} else {
-	  			throw new RuntimeException("In PersistenceJpaConfig for vtDataSource Password is null or not replaced");
-			}
-		}*/
-
+		String encryptionPassword = env.getProperty("databasePassword");
+  		if(encryptionPassword != null){
+			vtDataSource.setPassword(encryptionPassword);
+  		} else {
+  			throw new RuntimeException("In PersistenceJpaConfig for dsfjDataSource encryptionPassword or  encryptionPassword is null");
+  		}
 		vtDataSource.setDriverClassName(driverClassName);
 		vtDataSource.setUrl(databaseURL);
 		vtDataSource.setUsername(databaseUserId);
@@ -160,27 +139,4 @@ public class PersistenceJpaConfig {
 		localContainerEntityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistenceProvider.class);
 		return localContainerEntityManagerFactoryBean;
 	}
-
-	// this is for second level cache
-	/*
-	@Bean
-	public LocalContainerEntityManagerFactoryBean emf(){
-		Properties jpaProperties = new Properties();
-		jpaProperties.put(org.hibernate.cfg.Environment.DEFAULT_SCHEMA, env.getProperty("schema"));
-		// second level cache
-		jpaProperties.put(org.hibernate.cfg.Environment.USE_SECOND_LEVEL_CACHE, "true");
-		jpaProperties.put(org.hibernate.cfg.Environment.USE_QUERY_CACHE, "true");
-		jpaProperties.put(org.hibernate.cfg.Environment.CACHE_REGION_FACTORY, EHCACHE_REGION_FACTORY);
-		jpaProperties.put(CONFIGURATION_RESOURCE_NAME, JPA_EHCACHE_FILE_NAME);
-		jpaProperties.put(CACHE_MANAGER_NAME, JPA_CACHE_MANAGER_NAME);
-		LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
-		localContainerEntityManagerFactoryBean.setDataSource(dsfjDataSource());
-		localContainerEntityManagerFactoryBean.setPersistenceUnitName(PERSISTENCE_UNIT_NAME);
-		localContainerEntityManagerFactoryBean.setJpaVendorAdapter(hibernateJpaVendorAdapter());
-		localContainerEntityManagerFactoryBean.setJpaProperties(jpaProperties);
-		localContainerEntityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistenceProvider.class);
-		return localContainerEntityManagerFactoryBean;
-	}
-	*/
-
 }

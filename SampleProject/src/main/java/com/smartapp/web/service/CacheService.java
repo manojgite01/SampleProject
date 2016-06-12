@@ -8,7 +8,7 @@ import net.sf.ehcache.Element;
 import com.smartapp.web.domain.Employee;
 
 	
-public interface VTCacheService {
+public interface CacheService {
 		
 	public boolean loadVTCache();
 	public Element getCacheElement(String cacheKey);

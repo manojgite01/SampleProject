@@ -7,15 +7,16 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;
 
-import com.smartapp.aspect.IAFPerformanceLogForServiceDAOAspect;
+import com.smartapp.aspect.ExceptionLoggerAspect;
+import com.smartapp.aspect.PerformanceLogForServiceDAOAspect;
 
 /**
  * Include all the configuration needed for application in this file
  * Also properties file of Java project should be included in this file
  */
 @Configuration
-@PropertySource(value={"classpath:config/environment-${IafConfigSuffix}.properties",
-					   "classpath:config/sample-${IafConfigSuffix}.properties"
+@PropertySource(value={"classpath:config/environment-${env}.properties",
+					   "classpath:config/sample-${env}.properties"
 					  })
 @ComponentScan(basePackages={"com.smartapp.web.service",
 							  "com.smartapp.web.jms",
@@ -35,8 +36,8 @@ public class CommonBeansConfig{
 	 *
 	 */
 	@Bean
-	public IAFPerformanceLogForServiceDAOAspect iafPerformanceLogAspect(){
-		IAFPerformanceLogForServiceDAOAspect iafPerformanceLogForServiceAspect = new IAFPerformanceLogForServiceDAOAspect();
+	public PerformanceLogForServiceDAOAspect iafPerformanceLogAspect(){
+		PerformanceLogForServiceDAOAspect iafPerformanceLogForServiceAspect = new PerformanceLogForServiceDAOAspect();
 		return iafPerformanceLogForServiceAspect;
 
 	}
@@ -60,6 +61,4 @@ public class CommonBeansConfig{
 		return exceptionLoggerAspect;
 
 	}
-	
-	
 }

@@ -1,4 +1,4 @@
-package com.smartapp.web.config;
+package com.smartapp.aspect;
 
 
 import org.apache.commons.lang.exception.ExceptionUtils;

@@ -6,9 +6,6 @@ import javax.jms.Message;
 import javax.jms.Session;
 import javax.jms.TextMessage;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
 
@@ -18,8 +15,6 @@ public class MessageSender {
 	/**Injecting JmsTemplate, this variable is used to put the message on request and response queue.*/
 	private JmsTemplate jmsTemplate;
 
-	private final static Logger logger = LoggerFactory.getLogger(MessageSender.class);
-	
 	/**
 	 * This method is used to put the message on request and response queue using JmsTemplate.
 	 * MessageCreator is implemented in sendMessage method. Message text and corelationId are set into Message inside createMessage. 

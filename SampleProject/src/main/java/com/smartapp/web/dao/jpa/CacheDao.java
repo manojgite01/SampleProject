@@ -5,7 +5,7 @@ import java.util.List;
 import com.smartapp.web.domain.Employee;
 
 
-public interface VTCacheDao {
+public interface CacheDao {
 	
 	public List<Employee> getEmployees();
 }

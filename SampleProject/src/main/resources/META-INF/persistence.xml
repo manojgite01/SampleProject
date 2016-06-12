@@ -7,6 +7,9 @@
         <persistence-unit name="jpa" transaction-type="RESOURCE_LOCAL">
         	<provider>org.hibernate.ejb.HibernatePersistence</provider>
         	<class>com.smartapp.web.domain.Employee</class>
+        	<class>com.smartapp.web.domain.User</class>
+        	<class>com.smartapp.web.domain.UserRole</class>
+        	<class>com.smartapp.web.domain.UserDetails</class>
 		<exclude-unlisted-classes />
 		<!-- <properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />

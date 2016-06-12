@@ -1,7 +1,7 @@
 https://plumbr.eu/outofmemoryerror/permgen-space
 https://plumbr.eu/handbook/garbage-collection-algorithms-implementations
 
-Add = -DIafConfigSuffix=Local -XX:+CMSClassUnloadingEnabled -XX:+CMSPermGenSweepingEnabled -XX:MaxPermSize=512m
+Add = -Denv=Local -XX:+CMSClassUnloadingEnabled -XX:+CMSPermGenSweepingEnabled -XX:MaxPermSize=512m
 
 Java applications are only allowed to use a limited amount of memory. 
 The exact amount of memory your particular application can use is specified during application startup. 

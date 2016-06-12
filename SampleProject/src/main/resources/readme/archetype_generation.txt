@@ -1,0 +1,15 @@
+http://maven.apache.org/archetype/maven-archetype-plugin/advanced-usage.html
+
+Calling mvn archetype:create-from-project the plugin first resolves the package by guessing the project directory.
+
+It then generates the directory tree of the archetype in the target/generated-sources/archetype directory.
+
+Then move to that generated directory and call mvn install on the created archetype.
+
+$ cd target/generated-sources/archetype/
+$ mvn install
+
+Finally move to a fresh directory and use your archetype.
+$ mkdir /tmp/archetype
+$ cd /tmp/archetype
+$ mvn archetype:generate -DarchetypeCatalog=local

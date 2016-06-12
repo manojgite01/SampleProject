@@ -18,7 +18,7 @@
 		<script type="text/javascript" src="components/bootstrap/js/bootstrap.js"></script>
 	</head> 
 	<body background="img/bgimages/bg1.jpg">
-		<jsp:include page="WEB-INF/view/header.jsp"></jsp:include>
+		<jsp:include page="header.jsp"></jsp:include>
 		<c:url value="/login.htm" var="messageUrl" />
 		<div align="center" style="margin-top: 100px;">
 			<h1><b><a href="${messageUrl}">Click to enter</a></b></h1>

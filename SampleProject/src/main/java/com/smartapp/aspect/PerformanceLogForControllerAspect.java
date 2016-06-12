@@ -16,7 +16,7 @@ import org.springframework.core.annotation.Order;
  * Using JAMon monitor to monitor the methods.Monitor can provide values like start time, end time, access time etc */
 @Aspect
 @Order(-2)
-public class IAFPerformanceLogForControllerAspect {
+public class PerformanceLogForControllerAspect {
 		
 	private static final String  START_END ="startEnd";
 	private static final String  PERFORMANCE ="Performance";
@@ -26,7 +26,7 @@ public class IAFPerformanceLogForControllerAspect {
 	private static final String  DAYS_SINCE_1970 ="daysSince1970";
 	private static final String  MILLIS_FOR_DAY ="millisForDay";
 	
-	public IAFPerformanceLogForControllerAspect() {
+	public PerformanceLogForControllerAspect() {
 	}
 	
 	/** This advice will be called everytime 

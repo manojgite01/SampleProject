@@ -20,30 +20,32 @@
 		<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
 		<script type="text/javascript" src="components/bootstrap/js/bootstrap.min.js"></script>
 	</head> 
-	<body>
+	<body background="img/bgimages/bg1.jpg">
+	<jsp:include page="header.jsp"></jsp:include>
 	<div class="container">
-		<div align="center" style="margin-top: 100px;">
-			<c:choose>
-				<c:when test="${not empty failureMsg}">
-					<div class="alert alert-danger">
-						<strong>${failureMsg}</strong>
-					</div>
-				</c:when>
-				<c:otherwise>
-					<div class="alert alert-info">
-						<strong>${message}</strong>
-					</div>
-				</c:otherwise>
-			</c:choose>
-			
+		<div align="center">
+			<c:if test="${not empty message}">
+				<div class="alert alert-info">
+					<strong>${message}</strong>
+				</div>
+			</c:if>
+		</div>
+		<div align="center">
+			<c:if test="${not empty failureMsg}">
+				<div class="alert alert-danger">
+					<strong>${failureMsg}</strong>
+				</div>
+			</c:if>
+		</div>
+		<div align="center">
 			<div class="alert alert-warning" id="alert_template" style="display: none;">
 			    <button type="button" class="close">×</button>
 			</div>
 		</div>
 	</div>
-	<form:form id="employeeForm" name="employeeForm" action="home.htm" method="post" modelAttribute="employeeForm">
+	<form:form id="employeeForm" name="employeeForm" action="search.htm" method="post" modelAttribute="employeeForm">
 		<div class="container">
-		  <h2>Employee Search Screen</h2>
+		  <h2 style="color: silver;">Employee Search Screen</h2>
 		  <div class="panel panel-default">
 		    <div class="panel-body">
 			    <div align="center">
@@ -54,8 +56,9 @@
 			</div>
 		  </div>
 		</div>
+		<c:if test="${employeeForm.id ne null}">
 		<div class="container">
-		  <h2>Employee Search Details</h2>
+		  <h2 style="color: silver;">Employee Search Details</h2>
 			<div class="panel panel-default">
 			    <div class="panel-body">
 					 <div class="table-responsive">
@@ -79,6 +82,7 @@
 				</div>
 			</div>
 		</div>
+		</c:if>
 	</form:form>
 	</body>
 	<script type="text/javascript">

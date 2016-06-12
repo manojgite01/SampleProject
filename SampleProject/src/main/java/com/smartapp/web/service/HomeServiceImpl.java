@@ -12,7 +12,7 @@ public class HomeServiceImpl implements HomeService {
 	
 	@Autowired
 	@Qualifier("cacheService")
-	VTCacheService cacheService;
+	CacheService cacheService;
 	
 	public Employee getEmployee(EmployeeForm form) {
 		Employee employee = cacheService.getEmployeeMap().get(form.getId() == null?1:form.getId());
