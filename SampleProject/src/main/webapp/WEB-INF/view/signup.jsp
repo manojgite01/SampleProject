@@ -24,7 +24,29 @@
 <body background="img/bgimages/bg1.jpg">
 	<jsp:include page="header.jsp"></jsp:include>
 	<h1>Welcome to SignUp Screen</h1>
-	<form:form name="userDetailsForm" action="signup.htm" method="POST">
+	<div class="container">
+		<div align="center">
+			<c:if test="${not empty message}">
+				<div class="alert alert-info">
+					<strong>${message}</strong>
+				</div>
+			</c:if>
+		</div>
+		<div align="center">
+			<c:if test="${not empty error}">
+				<div class="alert alert-danger" id="errormsg-template">
+					<strong>${error}</strong>
+					 <button type="button" class="close">×</button>
+				</div>
+			</c:if>
+		</div>
+		<div align="center">
+			<div class="alert alert-warning" id="alert_template" style="display: none;">
+			    <button type="button" class="close">×</button>
+			</div>
+		</div>
+	</div>
+	<form:form name="userDetailsForm" action="signup.htm" method="POST" modelAttribute="userDetailsForm">
 	<input type="hidden" name="userAction">
 		<div class="container" align="center">
 			 <div class="row">
@@ -32,17 +54,17 @@
 		            <legend><a href="#"><i class="glyphicon glyphicon-globe"></i></a> Sign up!</legend>
 		            <div class="row">
 		                <div class="col-xs-6 col-md-6">
-		                    <input class="form-control" name="firstname" placeholder="First Name" type="text"
-		                        required autofocus />
+		                    <form:input path="fname" class="form-control" name="fname" id="fname" placeholder="First Name" type="text" required="required" autofocus="autofocus" ></form:input>
 		                </div>
 		                <div class="col-xs-6 col-md-6">
-		                    <input class="form-control" name="lastname" placeholder="Last Name" type="text" required />
+		                    <form:input path="lname" class="form-control" name="lname" id="lname" placeholder="Last Name" type="text" required="required" autofocus="autofocus" />
 		                </div>
 		            </div>
-		            <input class="form-control" name="youremail" placeholder="Your Email" type="email" />
-		            <input class="form-control" name="reenteremail" placeholder="Re-enter Email" type="email" />
-		            <input class="form-control" name="password" placeholder="New Password" type="password" />
-		            <label for="">
+		            <form:input path="username" class="form-control" name="username" id="username" placeholder="Username" type="text" required="required" autofocus="autofocus"/>
+		            <form:input path="email" class="form-control" name="email" id="email" placeholder="Your Email" type="email" required="required" autofocus="autofocus"/>
+		            <form:input path="password" class="form-control" name="password" id="password" placeholder="New Password" type="password" required="required" autofocus="autofocus"/>
+		            <input class="form-control" name="repassword" id="repassword" placeholder="Re-enter Password" type="password" required="required" autofocus="autofocus"/>
+		            <!-- <label for="">
 		                Birth Date</label>
 		            <div class="row">
 		                <div class="col-xs-4 col-md-4">
@@ -60,22 +82,52 @@
 		                        <option value="Year">Year</option>
 		                    </select>
 		                </div>
-		            </div>
+		            </div> -->
 		            <label class="radio-inline">
-		                <input type="radio" name="sex" id="inlineCheckbox1" value="male" />
+		                <form:radiobutton path="gender" name="gender" id="inlineCheckbox1" value="M" />
 		                Male
 		            </label>
 		            <label class="radio-inline">
-		                <input type="radio" name="sex" id="inlineCheckbox2" value="female" />
+		                <form:radiobutton path="gender" name="gender" id="inlineCheckbox2" value="F" />
 		                Female
 		            </label>
 		            <br />
 		            <br />
-		            <button class="btn btn-lg btn-primary btn-block" type="submit">
-		                Sign up</button>
+		            <button class="btn btn-lg btn-primary btn-block" type="submit" id="signUpBtn">Sign up</button>
 		        </div>
 		    </div>
 		</div>
 	</form:form>
 </body>
+<script type="text/javascript">
+$(document).ready(function (){
+	$('#alert_template .close').click(function(e) {
+        $('#alert_template').fadeOut('fast');
+    });
+	
+	$('#errormsg-template .close').click(function(e) {
+        $('#errormsg-template').fadeOut('fast');
+    });
+	
+	$("#signUpBtn").click(function(){
+		if(validateForm()){
+			var form = document.userDetailsForm;
+			form.userAction.value="createUser";
+			form.submit;
+		}else{
+			return false;
+		}
+	});
+});
+
+function validateForm(){
+	if($("#password").val() != $("#repassword").val()){
+		$("#alert_template span").remove();
+		$("#alert_template button").after('<span>Please enter same password.</span>');
+		$('#alert_template').fadeIn('slow');
+		return false;
+	}
+	return true;
+}
+</script>
 </html>

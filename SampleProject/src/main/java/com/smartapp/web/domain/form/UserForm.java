@@ -13,6 +13,7 @@ public class UserForm implements Serializable{
 	private String password;
 	private boolean enabled;
 	private Set<UserRole> userRole;
+	private String errorMsg;
 	
 	public String getUsername() {
 		return username;
@@ -37,6 +38,12 @@ public class UserForm implements Serializable{
 	}
 	public void setUserRole(Set<UserRole> userRole) {
 		this.userRole = userRole;
+	}
+	public String getErrorMsg() {
+		return errorMsg;
+	}
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
 	}
 	
 }

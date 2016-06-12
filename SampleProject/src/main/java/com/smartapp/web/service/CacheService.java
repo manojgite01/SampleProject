@@ -6,6 +6,7 @@ import java.util.Map;
 import net.sf.ehcache.Element;
 
 import com.smartapp.web.domain.Employee;
+import com.smartapp.web.domain.User;
 
 	
 public interface CacheService {
@@ -14,4 +15,6 @@ public interface CacheService {
 	public Element getCacheElement(String cacheKey);
 	public Map<Integer, Employee> getEmployeeMap();
 	public List<Employee> getEmployeeList();
+	public List<User> getUsersList();
+	public boolean refreshCache();
 }

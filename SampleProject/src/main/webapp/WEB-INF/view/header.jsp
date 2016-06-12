@@ -29,12 +29,19 @@
         </ul>
       </li> --%>
       <li><a href="${context}/search.htm">Search</a></li>
-      <li><a href="#">Admin</a></li>
+      <li><a href="${context}/manageUsers.htm">Admin</a></li>
       <li><a href="#">Reports</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="${context}/signup.htm"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="${context}/login.htm"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <c:choose>
+      	<c:when test="${not empty user.username and user.enabled}">
+      		<li><a href="${context}/logout.htm"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      	</c:when>
+      	<c:otherwise>
+      		<li><a href="${context}/login.htm"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      	</c:otherwise>
+      </c:choose>
     </ul>
   </div>
 </nav>

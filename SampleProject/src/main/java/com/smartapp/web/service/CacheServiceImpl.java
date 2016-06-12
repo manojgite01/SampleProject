@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import com.smartapp.web.dao.jpa.CacheDao;
 import com.smartapp.web.domain.Employee;
+import com.smartapp.web.domain.User;
 
 import net.sf.ehcache.Ehcache;
 import net.sf.ehcache.Element;
@@ -39,11 +40,16 @@ public class CacheServiceImpl implements CacheService{
 	    if (cache != null) {
 	    	synchronized (cache){	    		
 	    		cache.put("employees", cacheDao.getEmployees());
+	    		cache.put("users", cacheDao.getUsersList());
 	    	}
 	     } 
 	    System.out.println("loadVTCache() : EXIT");
   		return true;
 	} 
+	
+	public boolean refreshCache() {
+		return loadVTCache();
+	}
 	
 	
 	public Element getCacheElement(String cacheKey) {
@@ -67,6 +73,11 @@ public class CacheServiceImpl implements CacheService{
 
 	public List<Employee> getEmployeeList() {
 		List<Employee> list = (List<Employee>) getCacheElement("employees").getValue(); 
+		return list;
+	}
+	
+	public List<User> getUsersList() {
+		List<User> list = (List<User>) getCacheElement("users").getValue(); 
 		return list;
 	}
 	

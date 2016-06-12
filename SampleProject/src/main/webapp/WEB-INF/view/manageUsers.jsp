@@ -10,7 +10,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Welcome</title>
+		<title>Manage Users</title>
 		<LINK rel=stylesheet type=text/css href="components/bootstrap/css/bootstrap.min.css"> 
 		<link rel="icon" href="img/favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
@@ -44,39 +44,38 @@
 			</div>
 		</div>
 	</div>
-	<form:form id="employeeForm" name="employeeForm" action="search.htm" method="post" modelAttribute="employeeForm">
+	<form:form id="employeeForm" name="employeeForm" action="search.htm" method="post" modelAttribute="userDetailsForm">
 		<div class="container">
-		  <h2 style="color: silver;">Employee Search Screen</h2>
-		  <div class="panel panel-default">
-		    <div class="panel-body">
-			    <div align="center">
-					<form:label path="id">Employee ID:</form:label>
-					<form:input id="id" name="id" path="id"/>
-					<input data-toggle="tooltip" title="Click to get employee details!" data-placement="bottom" type="submit" class="btn btn-default" value="Get Details" onclick="return validateForm();">
-				</div>
-			</div>
-		  </div>
+		  <h2 style="color: silver;">Manage Users Screen</h2>
 		</div>
-		<c:if test="${employeeForm.id ne null}">
+		<c:if test="${not empty usersList}">
 		<div class="container">
-		  <h2 style="color: silver;">Employee Search Details</h2>
+		  <h2 style="color: silver;">User Details</h2>
 			<div class="panel panel-default">
 			    <div class="panel-body">
 					 <div class="table-responsive">
 						<table class="table table-hover">
 							<thead>
 								<tr>
-									<th>Employee Name</th>
-									<th>Role</th>
-									<th>Joining Date</th>
+									<th>First Name</th>
+									<th>Last Name</th>
+									<th>Username</th>
+									<th>Email</th>
+									<th>Gender</th>
+									<th>Activation Status</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>${employeeForm.name}</td>
-									<td>${employeeForm.role}</td>
-									<td><fmt:formatDate type="date" value="${employeeForm.createdOn}"/></td>
-								</tr>
+								<c:forEach var="user" items="${usersList }">
+									<tr>
+										<td>${user.userDetails.fname}</td>
+										<td>${user.userDetails.lname}</td>
+										<td>${user.username}</td>
+										<td>${user.userDetails.email}</td>
+										<td>${user.userDetails.gender}</td>
+										<td>${user.enabled}</td>
+									</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 					</div>

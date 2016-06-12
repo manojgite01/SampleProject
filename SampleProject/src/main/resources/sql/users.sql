@@ -40,3 +40,6 @@ CREATE TABLE user_details (
   PRIMARY KEY (user_det_id),
   KEY fk_uname_idx (username),
   CONSTRAINT fk_uname FOREIGN KEY (username) REFERENCES users (username));
+  
+  insert into user_details (username,fname,lname, gender, email) values ('mgite','Manoj','Gite','M','manoj@gmail.com');
+  insert into user_details (username,fname,lname, gender, email) values ('akokate','Anil','Kokate','M','anil@gmail.com');

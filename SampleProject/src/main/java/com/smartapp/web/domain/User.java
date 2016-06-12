@@ -68,7 +68,7 @@ public class User implements Serializable{
 		this.enabled = enabled;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade=CascadeType.ALL)
 	public Set<UserRole> getUserRole() {
 		return this.userRole;
 	}
@@ -77,7 +77,7 @@ public class User implements Serializable{
 		this.userRole = userRole;
 	}
 	
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "user", cascade=CascadeType.ALL)
+	@OneToOne(fetch = FetchType.EAGER, mappedBy = "user", cascade=CascadeType.ALL)
 	public UserDetails getUserDetails() {
 		return userDetails;
 	}
